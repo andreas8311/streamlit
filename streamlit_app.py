@@ -13,6 +13,3 @@ add_selectbox = st.sidebar.selectbox(
     ("Email", "Home phone", "Mobile phone")
 )
 
-
-
-add_selectbox.write('Hello again')
