@@ -14,7 +14,7 @@ add_selectbox = st.sidebar.selectbox(
 )
 
 with st.expander("Click here if you want to  know more", expanded=False):
-    st.line_chart(data=df, width=10, height=10, use_container_width=True)
+    st.line_chart(data=df)
     st.write("Here we write some useless stiff")
 with st.expander("second stuff", expanded=False):
     st.write("""
