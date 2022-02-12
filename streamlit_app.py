@@ -17,7 +17,8 @@ with st.expander("Click here if you want to  know more", expanded=False):
     st.write("""
              And here you have some useless stuff.
          """)
-    with st.expander("second stuff", expanded=False):
-        st.write("""
-                 and even more details
-             """)
+    st.write("Here wz write some useless stiff")
+with st.expander("second stuff", expanded=False):
+    st.write("""
+             and even more details
+         """)
