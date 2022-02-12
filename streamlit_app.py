@@ -1,6 +1,20 @@
 import streamlit as st
 import pandas as pd
 
+st.set_page_config(
+     page_title="My Interactive CV and AI portfolio",
+     page_icon="🧊",
+     layout="wide",
+     initial_sidebar_state="expanded",
+     menu_items={
+         'Get Help': 'https://www.extremelycoolapp.com/help',
+         'Report a bug': "https://www.extremelycoolapp.com/bug",
+         'About': "# This is a header. This is an *extremely* cool app!"
+     }
+ )
+
+
+
 st.write("Here's our first attempt at using data to create a table:")
 df = pd.DataFrame({
     'first column': [1, 2, 3, 4, 5],
