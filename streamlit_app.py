@@ -31,9 +31,11 @@ chart = (
         alt.X("DS and Algos"),
         alt.Y("QTY"),
         alt.Color("DS and Algos"),
-        alt.Tooltip(["DS and Algos", "QTY"]),
-        width=14,
-    )
+        alt.Tooltip(["DS and Algos", "QTY"])
+    ).properties(
+    width=800,
+    height=300
+)
     .interactive()
 )
 
