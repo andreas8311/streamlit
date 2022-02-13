@@ -30,7 +30,7 @@ chart = (
     .encode(
         alt.X("DS and Algos"),
         alt.Y("# of Puzzles"),
-        alt.Color("DS and Algos"),
+        #alt.Color("DS and Algos"),
         alt.Tooltip(["DS and Algos", "# of Puzzles"]),
     )
     .interactive()
