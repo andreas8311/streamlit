@@ -40,7 +40,7 @@ with st.expander("Data Structures and Algorithms", expanded=False):
     st.write("I have solved over 400 programming puzzles online on Codewars, Hackerrank and CodinGame")
     st.write(" - 150+ easy C++ puzzles on Codewars")
     st.write(" - 200+ easy Python puzzles on Codewars, Hackerrank and CodinGame")
-    st.write(" - 70+ medium/advanced Python puzzles on Codingame")
+    st.write(" - 70+ medium/advanced Python puzzles on mainly on Codingame")
     st.write(" ")
     st.write("""Below a chart of advanced techniques or algorithms I have used to solve medium/advanced CodinGame puzzles. 
                 Each puzzle takes between 30 minutes and 10 hours to solve. Basic techniques are omitted from the chart.
@@ -48,7 +48,24 @@ with st.expander("Data Structures and Algorithms", expanded=False):
     st.altair_chart(chart,use_container_width=True)
 
 
-with st.expander("second stuff", expanded=False):
+with st.expander("AI Bot Programming", expanded=False):
     st.write("""
-             and even more details
+             Details about the bots created
+         """)
+
+with st.expander("Data Prep-Processing", expanded=False):
+    st.write("""
+             Details about the bots created
+         """)
+with st.expander("Machine Learning Linear Regression", expanded=False):
+    st.write("""
+             Details about the bots created
+         """)
+with st.expander("Machine Learning Logistics Regression", expanded=False):
+    st.write("""
+             Details about the bots created
+         """)
+with st.expander("Machine Learning NLP", expanded=False):
+    st.write("""
+             Details about the bots created
          """)
