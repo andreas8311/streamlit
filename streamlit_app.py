@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
+import plotly.graph_objects as go
 
 
 
@@ -25,7 +25,7 @@ df = pd.DataFrame({
 
 with st.expander("Data Structures and Algorithms", expanded=False):
 
-    fig = px.bar(df, x=df.columns, y='first column')
+    fig = go.bar(df, x=df.columns, y='first column')
 
     # Plot!
     st.plotly_chart(fig, use_container_width=True)
