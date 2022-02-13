@@ -40,6 +40,9 @@ chart = (
 
 with st.expander("Data Structures and Algorithms", expanded=False):
 
+    st.write("""Below a chart of advanced techniques or algorithms I have used to solve CodinGame puzzles. 
+                Each puzzle takes between 1 and 10 hours to solve. Basic techniques are omitted from the chart.
+                """)
     st.altair_chart(chart,use_container_width=True)
     st.write("Here we write some useless stiff")
 
