@@ -29,9 +29,9 @@ chart = (
     .mark_bar()
     .encode(
         alt.X("DS and Algos"),
-        alt.Y("QTY"),
+        alt.Y("# of Puzzles"),
         alt.Color("DS and Algos"),
-        alt.Tooltip(["DS and Algos", "QTY"]),
+        alt.Tooltip(["DS and Algos", "# of Puzzles"]),
     )
     .interactive()
 )
