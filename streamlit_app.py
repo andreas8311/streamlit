@@ -19,7 +19,7 @@ st.sidebar.write("Management of over 50 people")
 st.sidebar.write("Le Wagon DataScience / AI bootcamp")
 st.sidebar.write("INSEAD Strategy certification")
 st.sidebar.write("Expand the various dropboxes on the right to learn more "
-                 "about my capabilities or to play around with the ML models")
+                 "about my capabilities or to play around with simple ML models",bold=True)
 
 
 
