@@ -19,8 +19,8 @@ add_selectbox = st.sidebar.selectbox(
 )
 
 df = pd.DataFrame({
-    'valuese': [9,8],
-    'algos': ['Pathfinding', 'Graph Theory'],
+    'QTY': [9,8],
+    'DS and Algos': ['Pathfinding', 'Graph Theory'],
 
 })
 
@@ -28,9 +28,10 @@ chart = (
     alt.Chart(df)
     .mark_bar()
     .encode(
-        alt.X("algos"),
-        alt.Y("valuese"),
-
+        alt.X("DS and Algos"),
+        alt.Y("QTY"),
+        alt.Color("DS and Algos"),
+        alt.Tooltip(["DS and Algos", "QTY"]),
     )
     .interactive()
 )
