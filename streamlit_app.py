@@ -73,10 +73,10 @@ with st.expander("Data Structures and Algorithms", expanded=False):
 with st.expander("AI Bot Programming", expanded=False):
     st.write("Developed 8 AI bots at Codingame and currently ranked top 0.5%")
     st.write("Type of bots developed:")
-    st.write(" - Neural Network (trained in TensorFlow and built muy own Feedforward for implementation")
+    st.write(" - Neural Network (trained in TensorFlow and built my own Feedforward network for efficient implementation")
     st.write(" - Rule based bots")
     st.write(" ")
-    st.write("Bots are built in conjunction with various Search algorithms(Beam Search, MCTS, Pathfinding algorithms)")
+    st.write("Bots are built in conjunction with various Search algorithms (Beam Search, MCTS, Pathfinding algorithms)")
 
 
 with st.expander("Data Prep-Processing", expanded=False):
