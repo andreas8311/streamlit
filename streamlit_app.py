@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-
+import altair as alt
 
 
 # Introduction text
@@ -19,15 +19,27 @@ add_selectbox = st.sidebar.selectbox(
 )
 
 df = pd.DataFrame({
-    'Graph Theory': [9],
-    'Path finding': [12],
+    'valuese': [9,8],
+    'algos': ['Pathfinding', 'Graph Theory'],
 
 })
+
+chart = (
+    alt.Chart(df)
+    .mark_bar()
+    .encode(
+        alt.X("algos"),
+        alt.Y("valuese"),
+
+    )
+    .interactive()
+)
+
 
 
 with st.expander("Data Structures and Algorithms", expanded=False):
 
-    st.bar_chart(df)
+    st.altair_chart(df)
     st.write("Here we write some useless stiff")
 
 with st.expander("second stuff", expanded=False):
