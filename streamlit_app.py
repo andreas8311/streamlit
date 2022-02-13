@@ -19,8 +19,7 @@ add_selectbox = st.sidebar.selectbox(
 )
 
 df = pd.DataFrame({
-    'first column': [1, 2, 3, 4, 5],
-    'second column': [10, 20, 30, 40, 50]
+    'first column': [1, 2, 3, 4, 5]
 }, columns=['test1', 'test2', 'test3', 'test4', 'test5'])
 
 
