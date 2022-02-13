@@ -19,8 +19,8 @@ add_selectbox = st.sidebar.selectbox(
 )
 
 df = pd.DataFrame({
-    'Graph Theory': 9,
-    'Path finding': 12,
+    'Graph Theory': [9],
+    'Path finding': [12],
 
 })
 
