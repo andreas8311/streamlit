@@ -88,7 +88,17 @@ with st.expander("Machine Learning Logistics Regression", expanded=False):
 
     y = data_diabetes['target'].apply(diabetes_positive)
     X = data_diabetes['data']
-    st.table(X.head(5))
+    st.table(X.head(2))
+    pipe = Pipeline([
+        ('scaler', MinMaxScaler()),
+        ('model', LogisticRegression())
+    ])
+    final_score = cross_validate(pipe, X, y, cv=10, scoring=['accuracy', 'recall', 'precision', 'f1'])
+
+    st.write(final_score['test_accuracy'].mean())
+    st.write(final_score['test_precision'].mean())
+    st.write(final_score['test_recall'].mean())
+    st.write(final_score['test_f1'].mean())
 
 with st.expander("Machine Learning NLP", expanded=False):
     st.write("""
