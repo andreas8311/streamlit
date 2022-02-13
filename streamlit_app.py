@@ -24,7 +24,7 @@ df = pd.DataFrame({
 
 
 with st.expander("Data Structures and Algorithms", expanded=False):
-    st.bar_chart(data=df)
+    st.bar_chart(df)
     st.write("Here we write some useless stiff")
 with st.expander("second stuff", expanded=False):
     st.write("""
