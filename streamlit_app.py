@@ -15,8 +15,9 @@ st.write("""
 
 
 df = pd.DataFrame({
-    '# of Puzzles': [12,9,5,5,4,3,3],
-    'DS and Algos': ['01 Graph Theory', '02 Pathfinding', '03 Greedy Algorithms','04 BFS','05 Memoization','06 Minimax','07 Binary Search Tree'],
+    '# of Puzzles': [12,9,7,5,4,3,3,3,2],
+    'DS and Algos': ['01 Graph Theory', '02 Pathfinding', '03 BFS DFS', '04 Greedy Algorithms','05 Memoization',
+                     '06 Minimax','07 Binary Search Tree','08 Simulation','09 Dynamic Programming'],
 
 })
 
