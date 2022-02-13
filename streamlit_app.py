@@ -10,6 +10,7 @@ from sklearn.model_selection import cross_validate
 from sklearn.datasets import fetch_openml
 data_diabetes = fetch_openml(data_id=37)
 
+# This is the whole sidebar menu:
 
 st.sidebar.image('PicAndy2.PNG')
 st.sidebar.subheader("Profile Summary :")
@@ -28,8 +29,9 @@ st.sidebar.write("Expand the various dropboxes on the right to learn more "
 st.title('Andreas Jakobsson ')
 st.header('Programming and Data Science')
 st.write("""
-             On this page you find a selection of my baseline projects and technical skills.
-             This page should be complemented with my official CV or with my Linkedin profile
+             On this page you find information about my technical skills.
+             This page should be complemented with my official CV or with my Linkedin profile.
+             I have also added a few playground ML projects for testing Streamlit capabilities.
          """)
 
 
@@ -69,9 +71,13 @@ with st.expander("Data Structures and Algorithms", expanded=False):
 
 
 with st.expander("AI Bot Programming", expanded=False):
-    st.write("""
-             Details about the bots created
-         """)
+    st.write("Developed 8 AI bots at Codingame and currently ranked top 0.5%")
+    st.write("Type of bots developed:")
+    st.write(" - Neural Network (trained in TensorFlow and built muy own Feedforward for implementation")
+    st.write(" - Rule based bots")
+    st.write(" ")
+    st.write("Bots are built in conjunction with various Search algorithms(Beam Search, MCTS, Pathfinding algorithms)")
+
 
 with st.expander("Data Prep-Processing", expanded=False):
     st.write("""
