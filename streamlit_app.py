@@ -75,9 +75,14 @@ with st.expander("Machine Learning Linear Regression", expanded=False):
 with st.expander("Machine Learning Logistics Regression", expanded=False):
     st.write(" Classify if patient has diabetes")
     solver_option = st.selectbox(
-        'How would you like to be contacted?',
+        'Which solver would you like to use?',
         ('newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'),1)
 
+
+
+    solver_option = st.selectbox(
+        'Which Scaler would you like to use?',
+        ('newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'), 1)
 
     def diabetes_positive(row_input):
         if row_input == "tested_positive":
@@ -86,10 +91,13 @@ with st.expander("Machine Learning Logistics Regression", expanded=False):
 
     y = data_diabetes['target'].apply(diabetes_positive)
     X = data_diabetes['data']
+
+    st.write(" This is how the data looks like (target column has been removed)")
+
     st.table(X.head(2))
     pipe = Pipeline([
         ('scaler', MinMaxScaler()),
-        ('model', LogisticRegression(solver=solver_option))
+        ('model', LogisticRegression(solver=solver_option, random_state=42))
     ])
     final_score = cross_validate(pipe, X, y, cv=10, scoring=['accuracy', 'recall', 'precision', 'f1'])
 
