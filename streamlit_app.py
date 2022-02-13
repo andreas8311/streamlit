@@ -13,10 +13,6 @@ st.write("""
          """)
 
 
-add_selectbox = st.sidebar.selectbox(
-    "How would you like to be contacted?",
-    ("Email", "Home phone", "Mobile phone")
-)
 
 df = pd.DataFrame({
     '# of Puzzles': [12,9,5,5,4,3,3],
@@ -40,11 +36,16 @@ chart = (
 
 with st.expander("Data Structures and Algorithms", expanded=False):
 
-    st.write("""Below a chart of advanced techniques or algorithms I have used to solve CodinGame puzzles. 
+    st.write("I have solved over 400 programming puzzles online on Codewars, Hackerrank and CodinGame")
+    st.write(" - 150+ easy C++ puzzles on Codewars")
+    st.write(" - 200+ easy Python puzzles on Codewars, Hackerrank and CodinGame")
+    st.write(" - 70+ medium/advanced Python puzzles on Codingame")
+
+    st.write("""Below a chart of advanced techniques or algorithms I have used to solve medium/advanced CodinGame puzzles. 
                 Each puzzle takes between 30 minutes and 10 hours to solve. Basic techniques are omitted from the chart.
                 """)
     st.altair_chart(chart,use_container_width=True)
-    st.write("Here we write some useless stiff")
+
 
 with st.expander("second stuff", expanded=False):
     st.write("""
