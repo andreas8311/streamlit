@@ -11,11 +11,16 @@ from sklearn.datasets import fetch_openml
 data_diabetes = fetch_openml(data_id=37)
 
 
-st.sidebar.write(
-    "This is where all the fun happens!"
-)
-st.sidebar.write("testing again")
 st.sidebar.image('PicAndy2.PNG')
+st.sidebar.subheader("Profile Summary :")
+st.sidebar.write("15+ years of experience including 5 years in strategy consulting "
+                 "and 5 years in senior management role")
+st.sidebar.write("Management of over 50 people")
+st.sidebar.write("Le Wagon DataScience / AI bootcamp")
+st.sidebar.write("INSEAD Strategy certification")
+st.sidebar.write("Expand the various dropboxes on the right to learn more "
+                 "about my capabilities or to play around with the ML models")
+
 
 
 # Introduction text
