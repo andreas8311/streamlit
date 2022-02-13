@@ -79,11 +79,6 @@ with st.expander("Machine Learning Logistics Regression", expanded=False):
         ('newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'),1)
 
 
-
-    solver_option = st.selectbox(
-        'Which Scaler would you like to use?',
-        ('newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'), 1)
-
     def diabetes_positive(row_input):
         if row_input == "tested_positive":
             return 1
