@@ -11,6 +11,10 @@ from sklearn.datasets import fetch_openml
 data_diabetes = fetch_openml(data_id=37)
 
 
+base="dark"
+primaryColor="purple"
+
+
 # Introduction text
 
 st.title('Andreas Jakobsson ')
