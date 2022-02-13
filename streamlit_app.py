@@ -26,7 +26,7 @@ df = pd.DataFrame({
 
 with st.expander("Data Structures and Algorithms", expanded=False):
 
-    fig = go.bar(df, x='columns', y='first column')
+    fig = go.Figure(go.bar(df, x='columns', y='first column'))
 
     # Plot!
     st.plotly_chart(fig, use_container_width=True)
