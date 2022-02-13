@@ -15,7 +15,7 @@ st.sidebar.write(
     "This is where all the fun happens!"
 )
 st.sidebar.write("testing again")
-#side_menu.image('PicAndy2.PNG')
+st.sidebar.image('PicAndy2.PNG')
 
 
 # Introduction text
