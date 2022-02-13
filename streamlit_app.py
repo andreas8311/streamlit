@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-
+import plotly.express as px
 
 
 
@@ -19,8 +19,8 @@ add_selectbox = st.sidebar.selectbox(
 )
 
 df = pd.DataFrame({
-    'first column': [1, 2, 3, 4, 5]
-}, columns=['test1', 'test2', 'test3', 'test4', 'test5'])
+    'first column': [12, 9, 3, 4, 5]
+}, columns=['Graph Theory', 'Path Finding', 'test3', 'test4', 'test5'])
 
 
 with st.expander("Data Structures and Algorithms", expanded=False):
