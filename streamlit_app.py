@@ -19,7 +19,7 @@ add_selectbox = st.sidebar.selectbox(
 )
 
 df = pd.DataFrame({
-    'QTY': [9,8],
+    '# of Puzzles': [9,8],
     'DS and Algos': ['Pathfinding', 'Graph Theory'],
 
 })
@@ -32,6 +32,7 @@ chart = (
         alt.Y("QTY"),
         alt.Color("DS and Algos"),
         alt.Tooltip(["DS and Algos", "QTY"]),
+        width=14,
     )
     .interactive()
 )
