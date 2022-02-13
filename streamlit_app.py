@@ -19,13 +19,14 @@ add_selectbox = st.sidebar.selectbox(
 )
 
 df = pd.DataFrame({
-    'first column': [12, 9, 3, 4, 5]
-}, columns=['Graph Theory', 'Path Finding', 'test3', 'test4', 'test5'])
+    'first column': [12, 9, 3, 4, 5],
+    'columns': ['Graph Theory', 'Path Finding', 'test3', 'test4', 'test5']
+})
 
 
 with st.expander("Data Structures and Algorithms", expanded=False):
 
-    fig = go.bar(df, x=df.columns, y='first column')
+    fig = go.bar(df, x='columns', y='first column')
 
     # Plot!
     st.plotly_chart(fig, use_container_width=True)
