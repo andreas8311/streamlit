@@ -7,12 +7,12 @@ df = pd.DataFrame({
     'second column': [10, 20, 30, 40, 50]
 })
 
-# Random text
+# Introduction text
 
-st.title('Andreas Jakobsson Programming and Data Science')
+st.subheader('Andreas Jakobsson Programming and Data Science')
 st.write("""
              On this page you find a selection of baseline projects and technical skills.
-             This should be complemented with my official CV or with my Linkedin profile
+             This page should be complemented with my official CV or with my Linkedin profile
          """)
 
 st.header('My header')
