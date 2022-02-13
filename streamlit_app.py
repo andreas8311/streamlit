@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 
 
-st.write("Here's our first attempt at using data to create a table:")
 df = pd.DataFrame({
     'first column': [1, 2, 3, 4, 5],
     'second column': [10, 20, 30, 40, 50]
@@ -10,12 +9,17 @@ df = pd.DataFrame({
 
 # Random text
 
-st.title('My title')
+st.title('Andreas Jakobsson Programming and Data Science')
+st.write("""
+             On this page you find a selection of baseline projects and technical skills.
+             This should be complemented with my official CV or with my Linkedin profile
+         """)
+
 st.header('My header')
 st.subheader('My sub')
 
-st.write('Most objects') # df, err, func, keras!
-st.write(['st', 'is <', 3]) # see *
+
+
 
 
 
