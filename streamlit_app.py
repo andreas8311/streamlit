@@ -76,7 +76,7 @@ with st.expander("Machine Learning Logistics Regression", expanded=False):
     st.write(" Classify if patient has diabetes")
     solver_option = st.selectbox(
         'How would you like to be contacted?',
-        ('newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'))
+        ('newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'),1)
 
 
     def diabetes_positive(row_input):
