@@ -78,6 +78,7 @@ with st.expander("Machine Learning Logistics Regression", expanded=False):
         'Which solver would you like to use?',
         ('newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'),1)
 
+    cv_folds = st.slider("Select number of cross validation folds",1,20,5,1)
 
     def diabetes_positive(row_input):
         if row_input == "tested_positive":
@@ -94,12 +95,12 @@ with st.expander("Machine Learning Logistics Regression", expanded=False):
         ('scaler', MinMaxScaler()),
         ('model', LogisticRegression(solver=solver_option, random_state=42))
     ])
-    final_score = cross_validate(pipe, X, y, cv=10, scoring=['accuracy', 'recall', 'precision', 'f1'])
+    final_score = cross_validate(pipe, X, y, cv=cv_folds, scoring=['accuracy', 'recall', 'precision', 'f1'])
 
-    st.write("Accuracy score : ", round(final_score['test_accuracy'].mean(),2))
-    st.write("Precision score : ", round(final_score['test_precision'].mean(),2))
-    st.write("Recall score : ", round(final_score['test_recall'].mean(),2))
-    st.write("F1 score : ", round(final_score['test_f1'].mean(),2))
+    st.write("Accuracy score : ", round(final_score['test_accuracy'].mean(),2), " | Standard dev : ",round(final_score['test_accuracy'].std(),2))
+    st.write("Precision score : ", round(final_score['test_precision'].mean(),2), " | Standard dev : ",round(final_score['test_precision'].std(),2))
+    st.write("Recall score : ", round(final_score['test_recall'].mean(),2), " | Standard dev : ",round(final_score['test_recall'].std(),2))
+    st.write("F1 score : ", round(final_score['test_f1'].mean(),2), " | Standard dev : ",round(final_score['test_f1'].std(),2))
 
 with st.expander("Machine Learning NLP", expanded=False):
     st.write("""
