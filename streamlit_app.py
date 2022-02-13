@@ -32,7 +32,10 @@ chart = (
         alt.Y("# of Puzzles"),
         alt.Color("DS and Algos"),
         alt.Tooltip(["DS and Algos", "# of Puzzles"]),
-    )
+    ).properties(
+    width=800,
+    height=300
+)
     .interactive()
 )
 
