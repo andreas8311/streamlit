@@ -39,7 +39,7 @@ chart = (
 
 with st.expander("Data Structures and Algorithms", expanded=False):
 
-    st.altair_chart(df)
+    st.altair_chart(chart)
     st.write("Here we write some useless stiff")
 
 with st.expander("second stuff", expanded=False):
