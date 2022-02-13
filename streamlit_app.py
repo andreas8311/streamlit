@@ -32,10 +32,7 @@ chart = (
         alt.Y("# of Puzzles"),
         alt.Color("DS and Algos"),
         alt.Tooltip(["DS and Algos", "# of Puzzles"]),
-    ).properties(
-    width=800,
-    height=300
-)
+    )
     .interactive()
 )
 
@@ -43,7 +40,7 @@ chart = (
 
 with st.expander("Data Structures and Algorithms", expanded=False):
 
-    st.altair_chart(chart)
+    st.altair_chart(chart,use_container_width=True)
     st.write("Here we write some useless stiff")
 
 with st.expander("second stuff", expanded=False):
