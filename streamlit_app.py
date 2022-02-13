@@ -2,8 +2,13 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import cross_validate
+
 from sklearn.datasets import fetch_openml
-test = fetch_openml(data_id=37)
+data_diabetes = fetch_openml(data_id=37)
 
 
 # Introduction text
@@ -64,13 +69,27 @@ with st.expander("Machine Learning Linear Regression", expanded=False):
     st.write("""
              Details about the bots created
          """)
+
+
+
 with st.expander("Machine Learning Logistics Regression", expanded=False):
-    st.write(" Testing")
+    st.write(" Classify if patient has diabetes")
     option = st.selectbox(
         'How would you like to be contacted?',
         ('Email', 'Home phone', 'Mobile phone'))
 
     st.write('You selected here:', option)
+
+
+    def diabetes_positive(row_input):
+        if row_input == "tested_positive":
+            return 1
+        return 0
+
+    y = data_diabetes['target'].apply(diabetes_positive())
+    X = data_diabetes['data']
+    st.table(X.head(5))
+
 with st.expander("Machine Learning NLP", expanded=False):
     st.write("""
              Details about the bots created
