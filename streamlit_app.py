@@ -70,7 +70,7 @@ with st.expander("Machine Learning Logistics Regression", expanded=False):
         'How would you like to be contacted?',
         ('Email', 'Home phone', 'Mobile phone'))
 
-    st.write('You selected:', option)
+    st.write('You selected here:', option)
 with st.expander("Machine Learning NLP", expanded=False):
     st.write("""
              Details about the bots created
