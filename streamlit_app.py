@@ -19,8 +19,8 @@ add_selectbox = st.sidebar.selectbox(
 )
 
 df = pd.DataFrame({
-    '# of Puzzles': [9,8],
-    'DS and Algos': ['Pathfinding', 'Graph Theory'],
+    '# of Puzzles': [3,3,4,5,5,9,12],
+    'DS and Algos': ['Binary Search Tree','Minimax','Memoization','BFS','Greedy Algorithms','Pathfinding', 'Graph Theory'],
 
 })
 
