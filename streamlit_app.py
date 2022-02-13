@@ -22,7 +22,7 @@ df = pd.DataFrame({
 })
 
 chart = (
-    alt.Chart(df)
+    alt.Chart(df, title="Type of DataStructure or ALgorithm used to solve Puzzle")
     .mark_bar()
     .encode(
         alt.X("DS and Algos"),
@@ -40,7 +40,7 @@ with st.expander("Data Structures and Algorithms", expanded=False):
     st.write("I have solved over 400 programming puzzles online on Codewars, Hackerrank and CodinGame")
     st.write(" - 150+ easy C++ puzzles on Codewars")
     st.write(" - 200+ easy Python puzzles on Codewars, Hackerrank and CodinGame")
-    st.write(" - 70+ medium/advanced Python puzzles on mainly on Codingame")
+    st.write(" - 70+ medium/advanced Python puzzles mainly on Codingame")
     st.write(" ")
     st.write("""Below a chart of advanced techniques or algorithms I have used to solve medium/advanced CodinGame puzzles. 
                 Each puzzle takes between 30 minutes and 10 hours to solve. Basic techniques are omitted from the chart.
