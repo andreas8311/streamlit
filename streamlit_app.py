@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 
+from sklearn.datasets import fetch_openml
+test = fetch_openml(data_id=37)
+
 
 # Introduction text
 
@@ -22,7 +25,7 @@ df = pd.DataFrame({
 })
 
 chart = (
-    alt.Chart(df, title="Type of DataStructure or ALgorithm used to solve Puzzle")
+    alt.Chart(df, title="Type of DataStructure or Algorithm used to solve Puzzle")
     .mark_bar()
     .encode(
         alt.X("DS and Algos"),
@@ -62,10 +65,22 @@ with st.expander("Machine Learning Linear Regression", expanded=False):
              Details about the bots created
          """)
 with st.expander("Machine Learning Logistics Regression", expanded=False):
+    st.write(" Testing")
+    option = st.selectbox(
+        'How would you like to be contacted?',
+        ('Email', 'Home phone', 'Mobile phone'))
+
+    st.write('You selected:', option)
+with st.expander("Machine Learning NLP", expanded=False):
     st.write("""
              Details about the bots created
          """)
-with st.expander("Machine Learning NLP", expanded=False):
+
+with st.expander("Programming languages", expanded=False):
+    st.write("""
+             Details about the bots created
+         """)
+with st.expander("Certifications", expanded=False):
     st.write("""
              Details about the bots created
          """)
