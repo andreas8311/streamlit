@@ -5,7 +5,8 @@ import pandas as pd
 
 # Introduction text
 
-st.title('Andreas Jakobsson Programming and Data Science')
+st.title('Andreas Jakobsson ')
+st.header('Programming and Data Science')
 st.write("""
              On this page you find a selection of my baseline projects and technical skills.
              This page should be complemented with my official CV or with my Linkedin profile
@@ -18,9 +19,10 @@ add_selectbox = st.sidebar.selectbox(
 )
 
 df = pd.DataFrame({
-    'first column': [12, 9, 3, 4, 5]
+    'Graph Theory': 9,
+    'Path finding': 12,
 
-},columns= ['Graph Theory', 'Path Finding', 'test3', 'test4', 'test5'])
+})
 
 
 with st.expander("Data Structures and Algorithms", expanded=False):
