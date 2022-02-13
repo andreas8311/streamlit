@@ -86,7 +86,7 @@ with st.expander("Machine Learning Logistics Regression", expanded=False):
             return 1
         return 0
 
-    y = data_diabetes['target'].apply(diabetes_positive())
+    y = data_diabetes['target'].apply(diabetes_positive)
     X = data_diabetes['data']
     st.table(X.head(5))
 
