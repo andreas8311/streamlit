@@ -78,7 +78,7 @@ with st.expander("Machine Learning Logistics Regression", expanded=False):
         'Which solver would you like to use?',
         ('newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'),1)
 
-    cv_folds = st.slider("Select number of cross validation folds",1,20,5,1)
+    cv_folds = st.slider("Select number of cross validation folds",2,20,5,1)
 
     def diabetes_positive(row_input):
         if row_input == "tested_positive":
