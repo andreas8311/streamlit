@@ -74,11 +74,9 @@ with st.expander("Machine Learning Linear Regression", expanded=False):
 
 with st.expander("Machine Learning Logistics Regression", expanded=False):
     st.write(" Classify if patient has diabetes")
-    option = st.selectbox(
+    solver_option = st.selectbox(
         'How would you like to be contacted?',
-        ('Email', 'Home phone', 'Mobile phone'))
-
-    st.write('You selected here:', option)
+        ('newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'))
 
 
     def diabetes_positive(row_input):
@@ -91,14 +89,14 @@ with st.expander("Machine Learning Logistics Regression", expanded=False):
     st.table(X.head(2))
     pipe = Pipeline([
         ('scaler', MinMaxScaler()),
-        ('model', LogisticRegression())
+        ('model', LogisticRegression(solver=solver_option))
     ])
     final_score = cross_validate(pipe, X, y, cv=10, scoring=['accuracy', 'recall', 'precision', 'f1'])
 
-    st.write(final_score['test_accuracy'].mean())
-    st.write(final_score['test_precision'].mean())
-    st.write(final_score['test_recall'].mean())
-    st.write(final_score['test_f1'].mean())
+    st.write("Accuracy score : ", round(final_score['test_accuracy'].mean(),2))
+    st.write("Precision score : ", round(final_score['test_precision'].mean(),2))
+    st.write("Recall score : ", round(final_score['test_recall'].mean(),2))
+    st.write("F1 score : ", round(final_score['test_f1'].mean(),2))
 
 with st.expander("Machine Learning NLP", expanded=False):
     st.write("""
