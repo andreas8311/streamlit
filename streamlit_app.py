@@ -11,9 +11,9 @@ from sklearn.datasets import fetch_openml
 data_diabetes = fetch_openml(data_id=37)
 
 
-base="dark"
-primaryColor="purple"
-
+side_menu = st.sidebar(
+    st.write("This is where all the fun happens!")
+)
 
 # Introduction text
 
