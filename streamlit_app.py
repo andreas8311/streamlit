@@ -24,7 +24,11 @@ df = pd.DataFrame({
 
 
 with st.expander("Data Structures and Algorithms", expanded=False):
-    st.bar_chart(df)
+
+    fig = px.bar(df, x=df.columns, y='first column')
+
+    # Plot!
+    st.plotly_chart(fig, use_container_width=True)
     st.write("Here we write some useless stiff")
 with st.expander("second stuff", expanded=False):
     st.write("""
