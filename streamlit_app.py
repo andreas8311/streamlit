@@ -12,7 +12,7 @@ data_diabetes = fetch_openml(data_id=37)
 
 
 side_menu = st.sidebar(
-    st.write("This is where all the fun happens!")
+    "This is where all the fun happens!"
 )
 
 # Introduction text
