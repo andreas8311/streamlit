@@ -48,7 +48,7 @@ chart = (
     .mark_bar()
     .encode(
         alt.X("DataStructures and Algortithms"),
-        alt.Y("# of Puzzles", scale=alt.Scale(domain=(0,15))),
+        alt.Y("# of Puzzles", scale=alt.Scale(domain=(0,13))),
         #alt.Color("DS and Algos"),
         alt.Tooltip(["DataStructures and Algortithms", "# of Puzzles"]),
     ).configure_axis(
