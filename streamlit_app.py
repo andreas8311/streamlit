@@ -37,7 +37,7 @@ st.write("""
              On this page you find information about my technical skills.
              This page should be complemented with my official CV or with my Linkedin profile.
              I have also added playground ML project for testing Streamlit capabilities. The source code
-             can be found by clicking "view app source" in the menu.
+             can be found on my Github by clicking "view app source" in the menu.
          """)
 
 
