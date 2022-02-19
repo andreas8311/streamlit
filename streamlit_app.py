@@ -73,7 +73,7 @@ with st.expander("Data Structures and Algorithms", expanded=False):
 with st.expander("AI Bot Programming", expanded=False):
     st.write("Developed 8 AI bots at Codingame and currently ranked top 0.5% on CodinGame. My bots typically achieve gold or legendary status")
     st.write("Type of bots developed:")
-    st.write(" - Neural Network (trained in TensorFlow and built my own Feedforward network for efficient implementation")
+    st.write(" - Neural Network (trained in TensorFlow Keras and built my own Feedforward network for efficient implementation)")
     st.write(" - Rule based bots")
     st.write(" ")
     st.write("My bots are built in conjunction with various search algorithms (Beam Search, MCTS, Pathfinding)")
@@ -91,6 +91,18 @@ with st.expander("AI Bot Programming", expanded=False):
     GreatEscapelink = '[Great Escape GamePlay](https://www.codingame.com/replay/609318686)'
     st.markdown(GreatEscapelink, unsafe_allow_html=True)
 
+with st.expander("Data Science and Machine Learning", expanded=False):
+    st.write("""
+             Below, you can find a selection of packages I have used and models I built:
+         """)
+    st.write(" ")
+    st.write(" - Pandas, Scipy, Numpy, SKLearn, Jupyter Notebook, Matplotlib, Seaborn, Plotly")
+    st.write(" - Supervised : Linear Regression, Logistic Regression, GridSearch, RandomSearch,Pipeline")
+    st.write(" - Unsupervised : KMeans, PCA")
+    st.write(" - TimeSeries : Arima, Sarima")
+    st.write(" - NLP : Text Processing, Vectorizing, LDA")
+
+
 with st.expander("Machine Learning Logistics Regression Playground", expanded=False):
     st.write(" Overall goal is to classify if patient has diabetes")
 
@@ -102,7 +114,7 @@ with st.expander("Machine Learning Logistics Regression Playground", expanded=Fa
     y = data_diabetes['target'].apply(diabetes_positive)
     X = data_diabetes['data']
 
-    st.write(" This is how the raw data looks like (source: openml(data_id=37), target column has been removed) :")
+    st.write(" This is how the raw data looks like. Target column has been removed (source is openml data_id=37) :")
 
     st.table(X.head(2))
 
@@ -124,10 +136,7 @@ with st.expander("Machine Learning Logistics Regression Playground", expanded=Fa
     st.write("Model above is built as a very simple SKLearn pipeline with MinimaxScaler and Logisticregression")
     st.write("I have also put a random state for response consistency ")
 
-with st.expander("Machine Learning NLP", expanded=False):
-    st.write("""
-             Details about the bots created
-         """)
+
 
 with st.expander("Programming languages", expanded=False):
     st.write("""
