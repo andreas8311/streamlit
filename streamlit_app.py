@@ -79,15 +79,15 @@ with st.expander("AI Bot Programming", expanded=False):
     st.write("My bots are built in conjunction with various search algorithms (Beam Search, MCTS, Pathfinding)")
     st.write(" ")
     st.write("""Below some links to selected gameplays. Photosynthesis and PacMan Rock Paper Scissors
-                are complex games with lots of edge cases while Line Racer and GreatEscape are easier
+                are complex games with lots of edge cases while Line Racer and Great Escape are easier
                 to build. Gamedetails and descriptions on codingame.com
             """)
     Photosyntlink = '[PhotoSynthesis GamePlay](https://www.codingame.com/replay/609318844)'
     st.markdown(Photosyntlink, unsafe_allow_html=True)
-    lineRacerlink = '[Line Racer GamePlay](https://www.codingame.com/replay/609317576)'
-    st.markdown(lineRacerlink, unsafe_allow_html=True)
     PacManlink = '[PacMan Rock Paper Scissors GamePlay](https://www.codingame.com/replay/609318413)'
     st.markdown(PacManlink, unsafe_allow_html=True)
+    lineRacerlink = '[Line Racer GamePlay](https://www.codingame.com/replay/609317576)'
+    st.markdown(lineRacerlink, unsafe_allow_html=True)
     GreatEscapelink = '[Great Escape GamePlay](https://www.codingame.com/replay/609318686)'
     st.markdown(GreatEscapelink, unsafe_allow_html=True)
 
@@ -102,7 +102,7 @@ with st.expander("Machine Learning Logistics Regression Playground", expanded=Fa
     y = data_diabetes['target'].apply(diabetes_positive)
     X = data_diabetes['data']
 
-    st.write(" This is how the raw data looks like (target column has been removed) :")
+    st.write(" This is how the raw data looks like (source: openml(data_id=37), target column has been removed) :")
 
     st.table(X.head(2))
 
