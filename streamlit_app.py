@@ -76,7 +76,7 @@ with st.expander("AI Bot Programming", expanded=False):
     st.write(" - Neural Network (trained in TensorFlow and built my own Feedforward network for efficient implementation")
     st.write(" - Rule based bots")
     st.write(" ")
-    st.write("My bots are built in conjunction with various Search algorithms (Beam Search, MCTS, Pathfinding algorithms)")
+    st.write("My bots are built in conjunction with various search algorithms (Beam Search, MCTS, Pathfinding)")
 
     lineRacerlink = '[Line Racer Example](https://www.codingame.com/replay/609317576)'
     st.markdown(lineRacerlink, unsafe_allow_html=True)
@@ -86,8 +86,6 @@ with st.expander("AI Bot Programming", expanded=False):
 with st.expander("Machine Learning Logistics Regression Playground", expanded=False):
     st.write(" Overall goal is to classify if patient has diabetes")
 
-    cv_folds = st.slider("Select number of cross validation folds",2,20,5,1)
-
     def diabetes_positive(row_input):
         if row_input == "tested_positive":
             return 1
@@ -96,9 +94,11 @@ with st.expander("Machine Learning Logistics Regression Playground", expanded=Fa
     y = data_diabetes['target'].apply(diabetes_positive)
     X = data_diabetes['data']
 
-    st.write(" This is how the raw data looks like (target column has been removed)")
+    st.write(" This is how the raw data looks like (target column has been removed) :")
 
     st.table(X.head(2))
+
+    cv_folds = st.slider("Select number of cross validation folds", 2, 20, 5, 1)
     pipe = Pipeline([
         ('scaler', MinMaxScaler()),
         ('model', LogisticRegression(solver='lbfgs', random_state=42))
