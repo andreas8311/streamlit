@@ -44,7 +44,7 @@ st.write("""
 ### Building DataFrame and chart for DS and Algos expander below
 df = pd.DataFrame({
     '# of Puzzles': [12,9,7,5,4,3,3,3,2],
-    'DataStructures and Algortithms': ['01 Graph Theory', '02 Pathfinding', '03 BFS DFS', '04 Greedy Algor.','05 Memoization',
+    'DataStructures and Algorithms': ['01 Graph Theory', '02 Pathfinding', '03 BFS DFS', '04 Greedy Algor.','05 Memoization',
                      '06 Minimax','07 Search Tree','08 Simulation','09 Dynamic Progr.'],
 
 })
@@ -53,9 +53,9 @@ chart = (
     alt.Chart(df, title="Type of DataStructure or Algorithm used to solve Puzzle")
     .mark_bar()
     .encode(
-        alt.X("DataStructures and Algortithms"),
+        alt.X("DataStructures and Algorithms"),
         alt.Y("# of Puzzles", scale=alt.Scale(domain=(0,13))),
-        alt.Tooltip(["DataStructures and Algortithms", "# of Puzzles"]),
+        alt.Tooltip(["DataStructures and Algorithms", "# of Puzzles"]),
     ).configure_axis(
     grid=False
 )
