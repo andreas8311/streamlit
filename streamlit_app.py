@@ -38,8 +38,8 @@ st.write("""
 # Building DataFrame and chart for DS and Algos expander below
 df = pd.DataFrame({
     '# of Puzzles': [12,9,7,5,4,3,3,3,2],
-    'DataStructures and Algortithms': ['01 Graph Theory', '02 Pathfinding', '03 BFS DFS', '04 Greedy Algorithms','05 Memoization',
-                     '06 Minimax','07 Binary Search Tree','08 Simulation','09 Dynamic Programming'],
+    'DataStructures and Algortithms': ['01 Graph Theory', '02 Pathfinding', '03 BFS DFS', '04 Greedy Algor.','05 Memoization',
+                     '06 Minimax','07 Search Tree','08 Simulation','09 Dynamic Progr.'],
 
 })
 
