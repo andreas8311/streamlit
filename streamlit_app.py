@@ -119,7 +119,7 @@ with st.expander("Deep Learning", expanded=False):
     st.write(" - Tensorflow 2.0 with Keras")
     st.write(" - ANN for general deep learning classification or regression tasks")
     st.write(" - CNN for pattern recognition in images or as first layer in gameplay bots")
-    st.write(" - RNN for timeSeries tasks")
+    st.write(" - RNN for timeSeries and NLP tasks")
 
 with st.expander("Machine Learning Logistics Regression Playground", expanded=False):
     st.write(" Overall goal is to classify if patient has diabetes")
