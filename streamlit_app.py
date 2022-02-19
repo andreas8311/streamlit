@@ -31,14 +31,14 @@ st.header('Programming and Data Science')
 st.write("""
              On this page you find information about my technical skills.
              This page should be complemented with my official CV or with my Linkedin profile.
-             I have also added a few playground ML projects for testing Streamlit capabilities.
+             I have also added playground ML project for testing Streamlit capabilities.
          """)
 
 
 
 df = pd.DataFrame({
     '# of Puzzles': [12,9,7,5,4,3,3,3,2],
-    'DS and Algos': ['01 Graph Theory', '02 Pathfinding', '03 BFS DFS', '04 Greedy Algorithms','05 Memoization',
+    'DataStructures and Algortithms': ['01 Graph Theory', '02 Pathfinding', '03 BFS DFS', '04 Greedy Algorithms','05 Memoization',
                      '06 Minimax','07 Binary Search Tree','08 Simulation','09 Dynamic Programming'],
 
 })
@@ -47,10 +47,10 @@ chart = (
     alt.Chart(df, title="Type of DataStructure or Algorithm used to solve Puzzle")
     .mark_bar()
     .encode(
-        alt.X("DS and Algos"),
+        alt.X("DataStructures and Algortithms"),
         alt.Y("# of Puzzles"),
         #alt.Color("DS and Algos"),
-        alt.Tooltip(["DS and Algos", "# of Puzzles"]),
+        alt.Tooltip(["DataStructures and Algortithms", "# of Puzzles"]),
     )
     .interactive()
 )
@@ -76,25 +76,15 @@ with st.expander("AI Bot Programming", expanded=False):
     st.write(" - Neural Network (trained in TensorFlow and built my own Feedforward network for efficient implementation")
     st.write(" - Rule based bots")
     st.write(" ")
-    st.write("Bots are built in conjunction with various Search algorithms (Beam Search, MCTS, Pathfinding algorithms)")
+    st.write("My bots are built in conjunction with various Search algorithms (Beam Search, MCTS, Pathfinding algorithms)")
 
-
-with st.expander("Data Prep-Processing", expanded=False):
-    st.write("""
-             Details about the bots created
-         """)
-with st.expander("Machine Learning Linear Regression", expanded=False):
-    st.write("""
-             Details about the bots created
-         """)
+    lineRacerlink = '[Line Racer Example](https://www.codingame.com/replay/609317576)'
+    st.markdown(lineRacerlink, unsafe_allow_html=True)
 
 
 
-with st.expander("Machine Learning Logistics Regression", expanded=False):
-    st.write(" Classify if patient has diabetes")
-    solver_option = st.selectbox(
-        'Which solver would you like to use?',
-        ('newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'),1)
+with st.expander("Machine Learning Logistics Regression Playground", expanded=False):
+    st.write(" Overall goal is to classify if patient has diabetes")
 
     cv_folds = st.slider("Select number of cross validation folds",2,20,5,1)
 
@@ -106,19 +96,25 @@ with st.expander("Machine Learning Logistics Regression", expanded=False):
     y = data_diabetes['target'].apply(diabetes_positive)
     X = data_diabetes['data']
 
-    st.write(" This is how the data looks like (target column has been removed)")
+    st.write(" This is how the raw data looks like (target column has been removed)")
 
     st.table(X.head(2))
     pipe = Pipeline([
         ('scaler', MinMaxScaler()),
-        ('model', LogisticRegression(solver=solver_option, random_state=42))
+        ('model', LogisticRegression(solver='lbfgs', random_state=42))
     ])
     final_score = cross_validate(pipe, X, y, cv=cv_folds, scoring=['accuracy', 'recall', 'precision', 'f1'])
+
+    st.write(" As you modify the cross validation folds, you can see how the outcome is adjusted below:")
 
     st.write("Accuracy score : ", round(final_score['test_accuracy'].mean(),2), " | Standard dev : ",round(final_score['test_accuracy'].std(),2))
     st.write("Precision score : ", round(final_score['test_precision'].mean(),2), " | Standard dev : ",round(final_score['test_precision'].std(),2))
     st.write("Recall score : ", round(final_score['test_recall'].mean(),2), " | Standard dev : ",round(final_score['test_recall'].std(),2))
     st.write("F1 score : ", round(final_score['test_f1'].mean(),2), " | Standard dev : ",round(final_score['test_f1'].std(),2))
+    st.write(" ")
+
+    st.write("Model above is built as a very simple SKLearn pipeline with MinimaxScaler and Logisticregression")
+    st.write("I have also put a random state for response consistency ")
 
 with st.expander("Machine Learning NLP", expanded=False):
     st.write("""
