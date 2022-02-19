@@ -71,20 +71,24 @@ with st.expander("Data Structures and Algorithms", expanded=False):
 
 
 with st.expander("AI Bot Programming", expanded=False):
-    st.write("Developed 8 AI bots at Codingame and currently ranked top 0.5%")
+    st.write("Developed 8 AI bots at Codingame and currently ranked top 0.5% on CodinGame. My bots typically achieve gold or legendary status")
     st.write("Type of bots developed:")
     st.write(" - Neural Network (trained in TensorFlow and built my own Feedforward network for efficient implementation")
     st.write(" - Rule based bots")
     st.write(" ")
     st.write("My bots are built in conjunction with various search algorithms (Beam Search, MCTS, Pathfinding)")
-
-    Photosyntlink = '[PhotoSynthesis Example](https://www.codingame.com/replay/609318844)'
+    st.write(" ")
+    st.write("""Below some links to selected gameplays. Photosynthesis and PacMan Rock Paper Scissors
+                are complex games with lots of edge cases while Line Racer and GreatEscape are easier
+                to build. Gamedetails and descriptions on codingame.com
+            """)
+    Photosyntlink = '[PhotoSynthesis GamePlay](https://www.codingame.com/replay/609318844)'
     st.markdown(Photosyntlink, unsafe_allow_html=True)
-    lineRacerlink = '[Line Racer Example](https://www.codingame.com/replay/609317576)'
+    lineRacerlink = '[Line Racer GamePlay](https://www.codingame.com/replay/609317576)'
     st.markdown(lineRacerlink, unsafe_allow_html=True)
-    PacManlink = '[PacMan Rock Paper Scissor Example](https://www.codingame.com/replay/609318413)'
+    PacManlink = '[PacMan Rock Paper Scissors GamePlay](https://www.codingame.com/replay/609318413)'
     st.markdown(PacManlink, unsafe_allow_html=True)
-    GreatEscapelink = '[Great Escape Example](https://www.codingame.com/replay/609318686)'
+    GreatEscapelink = '[Great Escape GamePlay](https://www.codingame.com/replay/609318686)'
     st.markdown(GreatEscapelink, unsafe_allow_html=True)
 
 with st.expander("Machine Learning Logistics Regression Playground", expanded=False):
