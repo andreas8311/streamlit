@@ -70,7 +70,7 @@ with st.expander("Data Structures and Algorithms", expanded=False):
     st.altair_chart(chart,use_container_width=True)
 
 
-with st.expander("AI Bot Programming", expanded=False):
+with st.expander("AI Bot Programming and Reinforcement Learning", expanded=False):
     st.write("Developed 8 AI bots at Codingame and currently ranked top 0.5% on CodinGame. My bots typically achieve gold or legendary status")
     st.write("Type of bots developed:")
     st.write(" - Neural Network (trained in TensorFlow Keras and built my own Feedforward network for efficient implementation)")
@@ -93,15 +93,25 @@ with st.expander("AI Bot Programming", expanded=False):
 
 with st.expander("Data Science and Machine Learning", expanded=False):
     st.write("""
-             Below, you can find a selection of packages I have used and models I built:
+             Below, you can find a selection of packages I have used and models I have built:
          """)
     st.write(" ")
     st.write(" - Pandas, Scipy, Numpy, SKLearn, Jupyter Notebook, Matplotlib, Seaborn, Plotly")
     st.write(" - Supervised : Linear Regression, Logistic Regression, GridSearch, RandomSearch,Pipeline")
     st.write(" - Unsupervised : KMeans, PCA")
     st.write(" - TimeSeries : Arima, Sarima")
-    st.write(" - NLP : Text Processing, Vectorizing, LDA")
 
+with st.expander("Deep Learning", expanded=False):
+    st.write("""
+             I have built my own Neural Network from scratch and in several occasions trained a model in tensorflow
+             and thereafter imported the weights to my own built feedforward network used in CodinGame.
+             Below, you can find a selection of packages I have used and models I have built that are more business related:
+         """)
+    st.write(" ")
+    st.write(" - Tensorflow 2.0 with Keras")
+    st.write(" - ANN for general deep learning classification or regression tasks")
+    st.write(" - CNN for pattern recognition in images or as first layer in gameplay bots")
+    st.write(" - RNN for timeSeries tasks")
 
 with st.expander("Machine Learning Logistics Regression Playground", expanded=False):
     st.write(" Overall goal is to classify if patient has diabetes")
