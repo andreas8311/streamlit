@@ -35,7 +35,7 @@ st.write("""
          """)
 
 
-
+# Building DataFrame and chart for DS and Algos expander below
 df = pd.DataFrame({
     '# of Puzzles': [12,9,7,5,4,3,3,3,2],
     'DataStructures and Algortithms': ['01 Graph Theory', '02 Pathfinding', '03 BFS DFS', '04 Greedy Algorithms','05 Memoization',
@@ -78,10 +78,14 @@ with st.expander("AI Bot Programming", expanded=False):
     st.write(" ")
     st.write("My bots are built in conjunction with various search algorithms (Beam Search, MCTS, Pathfinding)")
 
+    Photosyntlink = '[PhotoSynthesis Example](https://www.codingame.com/replay/609318844)'
+    st.markdown(Photosyntlink, unsafe_allow_html=True)
     lineRacerlink = '[Line Racer Example](https://www.codingame.com/replay/609317576)'
     st.markdown(lineRacerlink, unsafe_allow_html=True)
-
-
+    PacManlink = '[PacMan Rock Paper Scissor Example](https://www.codingame.com/replay/609318413)'
+    st.markdown(PacManlink, unsafe_allow_html=True)
+    GreatEscapelink = '[Great Escape Example](https://www.codingame.com/replay/609318686)'
+    st.markdown(GreatEscapelink, unsafe_allow_html=True)
 
 with st.expander("Machine Learning Logistics Regression Playground", expanded=False):
     st.write(" Overall goal is to classify if patient has diabetes")
