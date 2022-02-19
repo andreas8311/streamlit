@@ -1,6 +1,8 @@
+
+#Imports
 import streamlit as st
 import pandas as pd
-import altair as alt
+import altair as alt # Chart module
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import MinMaxScaler
@@ -8,9 +10,10 @@ from sklearn.pipeline import Pipeline
 from sklearn.model_selection import cross_validate
 
 from sklearn.datasets import fetch_openml
-data_diabetes = fetch_openml(data_id=37)
+data_diabetes = fetch_openml(data_id=37) # diabetes dataset from openml
 
-# This is the whole sidebar menu:
+
+### Sidebar frame menu begins here:
 
 st.sidebar.image('PicAndy2.PNG')
 st.sidebar.subheader("Profile Summary :")
@@ -20,9 +23,11 @@ st.sidebar.write("Management of over 50 people")
 st.sidebar.write("Le Wagon DataScience / AI bootcamp")
 st.sidebar.write("INSEAD Strategy certification")
 st.sidebar.write("Expand the various dropboxes on the right to learn more "
-                 "about my capabilities or to play around with simple ML models",bold=True)
+                 "about my capabilities or to play around with a simple ML model",bold=True)
+### Sidebar frame ends here
 
 
+### Main frame
 
 # Introduction text
 
@@ -31,11 +36,12 @@ st.header('Programming and Data Science')
 st.write("""
              On this page you find information about my technical skills.
              This page should be complemented with my official CV or with my Linkedin profile.
-             I have also added playground ML project for testing Streamlit capabilities.
+             I have also added playground ML project for testing Streamlit capabilities. The source code
+             can be found by clicking "view app source" in the menu.
          """)
 
 
-# Building DataFrame and chart for DS and Algos expander below
+### Building DataFrame and chart for DS and Algos expander below
 df = pd.DataFrame({
     '# of Puzzles': [12,9,7,5,4,3,3,3,2],
     'DataStructures and Algortithms': ['01 Graph Theory', '02 Pathfinding', '03 BFS DFS', '04 Greedy Algor.','05 Memoization',
@@ -49,16 +55,16 @@ chart = (
     .encode(
         alt.X("DataStructures and Algortithms"),
         alt.Y("# of Puzzles", scale=alt.Scale(domain=(0,13))),
-        #alt.Color("DS and Algos"),
         alt.Tooltip(["DataStructures and Algortithms", "# of Puzzles"]),
     ).configure_axis(
     grid=False
 )
     .interactive()
 )
+### End of DataFrame and Chart builder
 
 
-
+### Expander sections begins here. Each expander is self-explanatory
 with st.expander("Data Structures and Algorithms", expanded=False):
 
     st.write("I have solved over 400 programming puzzles online on Codewars, Hackerrank and CodinGame")
@@ -73,16 +79,16 @@ with st.expander("Data Structures and Algorithms", expanded=False):
 
 
 with st.expander("AI Bot Programming and Reinforcement Learning", expanded=False):
-    st.write("Developed 8 AI bots at Codingame and currently ranked top 0.5% on CodinGame. My bots typically achieve gold or legendary status")
+    st.write("Developed 8 AI bots and currently ranked top 0.5% on CodinGame. My bots typically achieve gold or legendary status")
     st.write("Type of bots developed:")
     st.write(" - Neural Network (trained in TensorFlow Keras and built my own Feedforward network for efficient implementation)")
     st.write(" - Rule based bots")
     st.write(" ")
-    st.write("My bots are built in conjunction with various search algorithms (Beam Search, MCTS, Pathfinding)")
+    st.write("My bots are built in conjunction with various search algorithms (Beam Search, MCTS, Pathfinding etc)")
     st.write(" ")
     st.write("""Below some links to selected gameplays. Photosynthesis and PacMan Rock Paper Scissors
                 are complex games with lots of edge cases while Line Racer and Great Escape are easier
-                to build. Gamedetails and descriptions on codingame.com
+                to build. Game details and descriptions on codingame.com
             """)
     Photosyntlink = '[PhotoSynthesis GamePlay](https://www.codingame.com/replay/609318844)'
     st.markdown(Photosyntlink, unsafe_allow_html=True)
@@ -145,16 +151,5 @@ with st.expander("Machine Learning Logistics Regression Playground", expanded=Fa
     st.write("F1 score : ", round(final_score['test_f1'].mean(),2), " | Standard dev : ",round(final_score['test_f1'].std(),2))
     st.write(" ")
 
-    st.write("Model above is built as a very simple SKLearn pipeline with MinimaxScaler and Logisticregression")
-    st.write("I have also put a random state for response consistency ")
-
-
-
-with st.expander("Programming languages", expanded=False):
-    st.write("""
-             Details about the bots created
-         """)
-with st.expander("Certifications", expanded=False):
-    st.write("""
-             Details about the bots created
-         """)
+    st.write("Model above is built as a very simple SKLearn pipeline with MinimaxScaler and Logisticregression.")
+    st.write("I have also put a random state for response consistency. ")
