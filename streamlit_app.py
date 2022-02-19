@@ -51,7 +51,9 @@ chart = (
         alt.Y("# of Puzzles"),
         #alt.Color("DS and Algos"),
         alt.Tooltip(["DataStructures and Algortithms", "# of Puzzles"]),
-    )
+    ).configure_axis(
+    grid=False
+)
     .interactive()
 )
 
