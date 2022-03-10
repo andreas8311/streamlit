@@ -47,7 +47,7 @@ def open_save_data(url, date_save):
     img = Image.open(BytesIO(response.content))
     # img.save( f"./radar{date_save}.png")
     print("img print : ", img)
-    print("img shape : ", img.shape)
+    #print("img shape : ", img.shape)
     gray_image = mpimg.imread(img)
     print(gray_image.shape)
     return gray_image
