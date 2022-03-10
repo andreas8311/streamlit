@@ -74,6 +74,8 @@ def open_save_data(url, date_save):
     response = requests.get(url)
 
     img = Image.open(BytesIO(response.content))
+    st.image(img) # This is showing the image on the screen
+    img = retirer_carte_fond(img, carte)
     st.image(img)
     return np.array(img)
 
