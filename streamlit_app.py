@@ -23,9 +23,39 @@ from io import BytesIO
 import matplotlib.image as mpimg
 
 carte = mpimg.imread("carte_test.png")
+cols = {1:[209,251,252],    ## Couleurs de l'echelle d'intensite de pluie (mm/h)
+       2:[97,219,241],
+       3:[76,147,240],
+       4:[23,38,192],
+       5:[0,141,3],
+       6:[12,255,0],
+       7:[255,249,0],
+       8:[255,145,0],
+       9:[232,0,0],
+       10:[232,0,230],
+       11:[255,175,254]}
+
+
+
+
+
 
 st.title(np.array(carte).shape)
 st.image(carte)
+
+
+def retirer_carte_fond (img, carte):
+    # Calcul de la diff entre l'image radar et la carte
+    im_diff= np.asarray(img)- np.asarray(carte)
+
+    # Restitution de leur vrai valeur aux pixels non proches de 0
+    M =np.ones((img.shape[0], img.shape[1], 3))
+    M[im_diff<0.1]=0
+    img_radar = M*img
+
+    return img_radar
+
+
 def iteration_15min(start, finish):
     ## Generateur de (an, mois, jour, heure, minute)
      while finish > start:
@@ -44,14 +74,14 @@ def open_save_data(url, date_save):
     response = requests.get(url)
 
     img = Image.open(BytesIO(response.content))
-
+    st.image(img)
     return np.array(img)
 
 def scrapping_images (start, finish) :
     """Scrape images radar en ligne toutes les 15 min
     entre deux dates donnees sous forme de datetime.datetime
     Sauvegarde les dates pour lesquelles la page n'existe pas.  """
-    missing_times = []
+
     saved_images = []
     for (an, mois, jour, heure, minute) in iteration_15min(start, finish):
         ## url scrapping :
@@ -65,20 +95,8 @@ def scrapping_images (start, finish) :
 
         except UnidentifiedImageError :
             print (date_save, ' --> Missing data')
-            #missing_times.append(date_save)
 
-    ## Save missing data list :
-    #missing_data_name = f'missing_datetimes_{start.strftime("%Y")}\
-    #    {start.strftime("%m")}{start.strftime("%d")}_to_{finish.strftime("%Y")}\
-    #        {finish.strftime("%m")}{finish.strftime("%d")}'
-    #pd.DataFrame(missing_times).to_pickle(missing_data_name)
-    #print(missing_times)
     return saved_images
-
-#def open_data(date_save):
-    #print('Open '+date_save)
-    #img = mpimg.imread(f"images/radar{date_save}.png")
-    #return img
 
 if st.button('Scrapping'):
 
