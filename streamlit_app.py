@@ -21,6 +21,8 @@ from PIL import Image, UnidentifiedImageError
 import numpy as np
 from io import BytesIO
 import matplotlib.image as mpimg
+from copy import copy
+import cv2 as cv
 
 carte = mpimg.imread("carte_test.png")
 cols = {1:[209,251,252],    ## Couleurs de l'echelle d'intensite de pluie (mm/h)
@@ -61,6 +63,25 @@ def retirer_txt (img):
     img[0:100,0:200,:] = 0
     return img
 
+def colors2grays (img):
+    """Transforme les vraies couleurs en niveau de gris"""
+    gray_image_3c = copy(img)
+    if np.max(img) <= 1. :
+        gray_image_3c = copy(img)*255
+
+    gray_image_1c = copy(gray_image_3c[:,:,0])
+    gray_image_1c[:,:] = 0
+
+    tolerance = 65  ## l
+
+    for i in  range(1,12):
+        col_lo=np.array([x-tolerance for x in cols[i]])
+        col_hi=np.array([x+tolerance for x in cols[i]])
+
+        mask=cv.inRange(gray_image_3c,col_lo,col_hi)
+        gray_image_1c[mask>0]=i/11
+
+    return gray_image_1c
 
 def iteration_15min(start, finish):
     ## Generateur de (an, mois, jour, heure, minute)
@@ -83,7 +104,8 @@ def open_save_data(url, date_save):
     st.image(img) # This is showing the image on the screen
     img = retirer_carte_fond(img, carte)
     img = retirer_txt(img)
-    st.image(img, clamp=True)
+    img_gray = colors2grays(img)
+    st.image(img_gray, clamp=True)
     return np.array(img)
 
 def scrapping_images (start, finish) :
