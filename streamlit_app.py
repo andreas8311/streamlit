@@ -16,11 +16,11 @@ data_diabetes = fetch_openml(data_id=37) # diabetes dataset from openml
 ##########################
 import requests
 from datetime import date, timedelta, datetime
-import cv2
+# import cv2
 from PIL import Image, UnidentifiedImageError
 import numpy as np
 from io import BytesIO
-
+import matplotlib.image as mpimg
 
 
 st.title('MeteoStat')
@@ -46,7 +46,7 @@ def open_save_data(url, date_save):
 
     img = Image.open(BytesIO(response.content))
     # img.save( f"./radar{date_save}.png")
-    gray_image = cv2.imread(img)
+    gray_image = mpimg.imread(img)
     print(gray_image.shape)
     return gray_image
 
