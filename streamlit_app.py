@@ -56,6 +56,11 @@ def retirer_carte_fond (img, carte):
 
     return img_radar
 
+def retirer_txt (img):
+    """Mettre zone de txt en haut a gauche de l'image a 0"""
+    img[0:100,0:200,:] = 0
+    return img
+
 
 def iteration_15min(start, finish):
     ## Generateur de (an, mois, jour, heure, minute)
@@ -77,7 +82,8 @@ def open_save_data(url, date_save):
     img = Image.open(BytesIO(response.content))
     st.image(img) # This is showing the image on the screen
     img = retirer_carte_fond(img, carte)
-    st.image(img, clamp=True)
+    img = retirer_txt(img)
+    #st.image(img, clamp=True)
     return np.array(img)
 
 def scrapping_images (start, finish) :
