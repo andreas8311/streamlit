@@ -69,14 +69,14 @@ def scrapping_images (start, finish) :
 
         except UnidentifiedImageError :
             print (date_save, ' --> Missing data')
-            missing_times.append(date_save)
+            #missing_times.append(date_save)
 
     ## Save missing data list :
-    missing_data_name = f'missing_datetimes_{start.strftime("%Y")}\
-        {start.strftime("%m")}{start.strftime("%d")}_to_{finish.strftime("%Y")}\
-            {finish.strftime("%m")}{finish.strftime("%d")}'
-    pd.DataFrame(missing_times).to_pickle(missing_data_name)
-    print(missing_times)
+    #missing_data_name = f'missing_datetimes_{start.strftime("%Y")}\
+    #    {start.strftime("%m")}{start.strftime("%d")}_to_{finish.strftime("%Y")}\
+    #        {finish.strftime("%m")}{finish.strftime("%d")}'
+    #pd.DataFrame(missing_times).to_pickle(missing_data_name)
+    #print(missing_times)
     return saved_images
 
 #def open_data(date_save):
