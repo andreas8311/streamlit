@@ -88,6 +88,18 @@ def lissage_image(img):
     img = cv.medianBlur(img, 5)
     return img
 
+def crop_image (img, zone) :
+    ## Zoom sur la zone d'interet
+    if zone == 'France_Nord' :
+        limite = [30,450,100,750]    ## Limites : [H_min, H_max, L_min, L_max]
+    elif zone == 'IDF':
+        limite = [190,265,400,510]    ## Limites : [H_min, H_max, L_min, L_max]
+    else :
+        print("Unknown area : Area should be in ('France_Nord', 'IDF')")
+    img_zoom = img[limite[0]:limite[1],limite[2]:limite[3]]
+    return img_zoom
+
+
 def iteration_15min(start, finish):
     ## Generateur de (an, mois, jour, heure, minute)
      while finish > start:
@@ -111,7 +123,8 @@ def open_save_data(url, date_save):
     img = retirer_txt(img)
     img_gray = colors2grays(img)
     img_gray = lissage_image(img_gray)
-    st.image(img_gray, clamp=True)
+    img_zoomX = crop_image(img_gray, 'France_Nord')
+    st.image(img_zoomX, clamp=True)
     return np.array(img)
 
 def scrapping_images (start, finish) :
