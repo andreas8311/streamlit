@@ -24,6 +24,8 @@ import matplotlib.image as mpimg
 from copy import copy
 import cv2 as cv
 
+from tensorflow.keras import models
+
 carte = mpimg.imread("carte_test.png")
 cols = {1:[209,251,252],    ## Couleurs de l'echelle d'intensite de pluie (mm/h)
        2:[97,219,241],
@@ -49,8 +51,7 @@ st.image(carte)
 def retirer_carte_fond (img, carte):
     # Calcul de la diff entre l'image radar et la carte
     im_diff= np.asarray(img)- np.asarray(carte)
-    st.write(np.array(img).shape)
-    st.write(np.array(carte).shape)
+
     # Restitution de leur vrai valeur aux pixels non proches de 0
     M =np.ones((866, 900, 3)) # M =np.ones((img.shape[0], img.shape[1], 3))
     M[im_diff<0.1]=0
