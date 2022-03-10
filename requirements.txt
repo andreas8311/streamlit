@@ -1,4 +1,4 @@
 scikit-learn
 matplotlib
 OpenCV
-tensorflow-cpu==2.80
+tensorflow-cpu
