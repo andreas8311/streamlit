@@ -40,17 +40,11 @@ def open_save_data(url, date_save):
     ## Ouvre l'image pointee par url
     ## Enregistre l'image avec l'extention date_save
 
-    print(url, date_save)
-
     response = requests.get(url)
 
     img = Image.open(BytesIO(response.content))
-    # img.save( f"./radar{date_save}.png")
-    st.write("img print : ", np.array(img).shape)
-    #print("img shape : ", img.shape)
-    gray_image = mpimg.imread(img)
-    print(gray_image.shape)
-    return gray_image
+
+    return np.array(img)
 
 def scrapping_images (start, finish) :
     """Scrape images radar en ligne toutes les 15 min
@@ -91,8 +85,8 @@ if st.button('Scrapping'):
     finish = datetime(2022, 1, 20, 20, 30)
 
     tmp = scrapping_images(start, finish)
-    tmp = np.array(tmp)
-    st.write(tmp.shape)
+
+    st.write(np.array(tmp).shape)
 
 
 
