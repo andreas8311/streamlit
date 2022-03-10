@@ -22,7 +22,7 @@ import numpy as np
 from io import BytesIO
 import matplotlib.image as mpimg
 from copy import copy
-import cv
+import cv2 as cv
 
 carte = mpimg.imread("carte_test.png")
 cols = {1:[209,251,252],    ## Couleurs de l'echelle d'intensite de pluie (mm/h)
