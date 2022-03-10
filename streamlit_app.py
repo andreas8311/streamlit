@@ -50,7 +50,7 @@ def retirer_carte_fond (img, carte):
     st.write(np.array(img).shape)
     st.write(np.array(carte).shape)
     # Restitution de leur vrai valeur aux pixels non proches de 0
-    M =np.ones((img.shape[0], img.shape[1], 3))
+    M =np.ones(img.shape[0], img.shape[1], 3) # M =np.ones((img.shape[0], img.shape[1], 3))
     M[im_diff<0.1]=0
     img_radar = M*img
 
