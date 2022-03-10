@@ -22,8 +22,9 @@ import numpy as np
 from io import BytesIO
 import matplotlib.image as mpimg
 
+carte = mpimg.imread("carte_test.png")
 
-st.title('MeteoStat')
+st.title(np.array(carte).shape)
 
 def iteration_15min(start, finish):
     ## Generateur de (an, mois, jour, heure, minute)
