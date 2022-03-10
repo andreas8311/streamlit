@@ -46,6 +46,8 @@ def open_save_data(url, date_save):
 
     img = Image.open(BytesIO(response.content))
     # img.save( f"./radar{date_save}.png")
+    print("img print : ", img)
+    print("img shape : ", img.shape)
     gray_image = mpimg.imread(img)
     print(gray_image.shape)
     return gray_image
@@ -89,7 +91,7 @@ if st.button('Scrapping'):
     start = datetime(2022, 1, 20, 18,00)
     finish = datetime(2022, 1, 20, 20, 30)
 
-    tmp = scrapping_images (start, finish)
+    tmp = scrapping_images(start, finish)
     tmp = np.array(tmp)
     st.write(tmp.shape)
 
