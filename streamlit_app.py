@@ -125,7 +125,7 @@ def open_save_data(url, date_save):
     img_gray = lissage_image(img_gray)
     img_zoomX = crop_image(img_gray, 'France_Nord')
     st.image(img_zoomX, clamp=True)
-    return np.array(img)
+    return np.array(img_zoomX)
 
 def scrapping_images (start, finish) :
     """Scrape images radar en ligne toutes les 15 min
