@@ -83,6 +83,11 @@ def colors2grays (img):
 
     return gray_image_1c
 
+def lissage_image(img):
+    img = img.astype('float32')
+    img = cv.medianBlur(img, 5)
+    return img
+
 def iteration_15min(start, finish):
     ## Generateur de (an, mois, jour, heure, minute)
      while finish > start:
@@ -105,6 +110,7 @@ def open_save_data(url, date_save):
     img = retirer_carte_fond(img, carte)
     img = retirer_txt(img)
     img_gray = colors2grays(img)
+    img_gray = lissage_image(img_gray)
     st.image(img_gray, clamp=True)
     return np.array(img)
 
