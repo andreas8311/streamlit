@@ -83,7 +83,7 @@ def open_save_data(url, date_save):
     st.image(img) # This is showing the image on the screen
     img = retirer_carte_fond(img, carte)
     img = retirer_txt(img)
-    #st.image(img, clamp=True)
+    st.image(img, clamp=True)
     return np.array(img)
 
 def scrapping_images (start, finish) :
