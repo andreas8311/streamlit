@@ -46,7 +46,7 @@ def open_save_data(url, date_save):
 
     img = Image.open(BytesIO(response.content))
     # img.save( f"./radar{date_save}.png")
-    print("img print : ", img)
+    st.write("img print : ", np.array(img).shape)
     #print("img shape : ", img.shape)
     gray_image = mpimg.imread(img)
     print(gray_image.shape)
@@ -60,8 +60,7 @@ def scrapping_images (start, finish) :
     saved_images = []
     for (an, mois, jour, heure, minute) in iteration_15min(start, finish):
         ## url scrapping :
-        url = (f"https://static.infoclimat.net/cartes/compo/{an}/{mois}/{jour}"
-            f"/color_{jour}{heure}{minute}.jpg")
+        url = (f"https://static.infoclimat.net/cartes/compo/{an}/{mois}/{jour}/color_{jour}{heure}{minute}.jpg")
         date_save = f'{an}_{mois}_{jour}_{heure}{minute}'
 
         try :
