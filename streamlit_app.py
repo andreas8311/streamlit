@@ -25,7 +25,7 @@ import matplotlib.image as mpimg
 carte = mpimg.imread("carte_test.png")
 
 st.title(np.array(carte).shape)
-
+st.image(carte)
 def iteration_15min(start, finish):
     ## Generateur de (an, mois, jour, heure, minute)
      while finish > start:
